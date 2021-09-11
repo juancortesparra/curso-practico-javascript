@@ -1,11 +1,15 @@
-const list1 = [
-  100,
-  200,
-  300,
-  500,
-];
+function calcularMediaAritmetica(lista) {
+  // let sumaLista = 0;
+  // for (let i = 0; i < lista.length; i++) {
+  // sumaLista = sumaLista + lista[i];
+  // }
 
-let sumaList1 = 0;
-for (let i = 0; i < list1.length; i++) {
-  sumaList1 = sumaList1 + list1[i];
+  const  sumaLista = lista.reduce(
+    function (valorAcumulado = 0, nuevoElemento) {
+    return valorAcumulado + nuevoElemento;
+    }
+  );
+  const promedioLista = sumaLista / lista.length;
+
+  return promedioLista;
 }
