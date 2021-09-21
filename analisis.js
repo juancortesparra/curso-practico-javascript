@@ -1,30 +1,20 @@
-const salariosEngl = England.map(
-function (person) {
- return person.salary;
-}
-);
-
-const salariosEnglSorted = salariosEngl.sort(
-function (salaryA, salaryB) {
-return salaryA - salaryB;
-}
-);
-
+// Helpers.
 function esPar(numerito) {
   return (numerito % 2 === 0);
 }
 function calcularMediaAritmetica(lista) {
   const sumaLista = lista.reduce(
     function (valorAcumulado = 0, nuevoElemento) {
-      return valorAcumulado + nuevoElemento
+      return valorAcumulado + nuevoElemento;
     }
   );
   const promedioLista = sumaLista / lista.length;
   return promedioLista;
 }
 
+// Calculadora de mediana.
 function medianaSalarios(list) {
-  const mitad = parseInt(list.length / 2);
+  const mitad = parseInt(list.length / 2, 10);
 
   if (esPar(list.length)) {
     const personMitad1 = list[mitad - 1];
@@ -38,6 +28,32 @@ function medianaSalarios(list) {
  }
 }
 
-console.log(
-  medianaSalarios(salariosEnglSorted)
+// Mediana general.
+const salariosEngl = England.map(
+  function (person) {
+ return person.salary;
+  }
 );
+
+const salariosEnglSorted = salariosEngl.sort(
+  function (salaryA, salaryB) {
+    return salaryA - salaryB;
+  }
+);
+const medianaGeneralEngl = medianaSalarios(salariosEnglSorted);
+// Mediana del top 10%.
+
+const spliceStart = (salariosEnglSorted.length * 90) / 100;
+const spliceCount = salariosEnglSorted.length - spliceStart;
+
+const salariosEnglTop10 = salariosEnglSorted.splice(
+  spliceStart,
+  spliceCount,
+);
+
+const medianaTop10Engl = medianaSalarios(salariosEnglTop10);
+
+console.log({
+  medianaGeneralEngl,
+  medianaTop10Engl,
+});
