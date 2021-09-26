@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link rel="stylesheet" href="/reto.css">
+    <title>Reto taller javascript</title>
+</head>
+<body>
+    <header>
+        <div class="header__logo">
+        <img src="https://img.icons8.com/color/48/000000/calculator--v1.png">
+        <p>JSCALCULATOR</p>
+    </div>
+    <div class="header__title">
+       <h1>Analisis de tiempo en vuelo</h1>
+    </div>
+    <div class="header__details">
+        <a href="https://github.com/juancortesparra/curso-practico-javascript">More Repositories</a>
+        <a href="https://www.linkedin.com/in/juan-cortes-378a16158/">More About Me</a>
+    </div>
+    </header>
+    <main class="container">
+    <section class="container__title__box1">
+        <h2>Capacidad de ahorro / Combustible</h2>
+        <form class="container__form">
+            <h3>Calcula el ahorro de combustible en la Aeronave</h3>
+
+            <label>Registro de la Aeronave</label>
+            <input id="inputName" class="input" name="inputNombre" placeholder="(Ej:Cessna-5757)" type="text">
+
+            <label> Cuantas millas por vuelo?</label>
+            <input id="inputMillas" class="input" name="inputMillas" placeholder="(Ej:4)" type="number">
+
+            <label>Que % quieres ahorra de combustible? </label>
+            <input id="inputPorcentaje" class="input" name="inputPorcentaje" placeholder="(Ej: 15)" type="number">
+
+            <label>Por cuanto tiempo vas a seguir esta planilla?</label>
+            <input id="inputTiempo" class="input" name="inputTiempo" placeholder="(Ej: 5 meses)" type="number">
+            <button type="button" class="button" onclick="CalcularAhorro()"> Calcular ahorro </button>
+        </form>
+    </section>
+    <section class="container__title__box2">
+        <h2>Resultado de tu ahorro</h2>
+        <div class="container__result">
+            <p id="result"></p>
+            <h2 id="resultadores"></h2>
+        </div>
+    </section>
+</main>
+<script src="./reto.js"></script>
+</body>
+</html>
